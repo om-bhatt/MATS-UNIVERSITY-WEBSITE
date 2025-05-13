@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Courses - Gokul Global University</title>
+    <link rel="shortcut icon" href="image/favicon.ico" type="image/svg+xml">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: sans-serif;
+        }
+
+        body {
+            background: #f9f9f9;
+            color: #333;
+        }
+
+        .header {
+            background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+            color: white;
+            padding-bottom: 60px;
+            text-align: center;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 40px;
+            background: transparent; /* Transparent nav bar */
+            position: relative;
+            z-index: 1;
+        }
+
+        nav img {
+            height: 60px;
+        }
+
+        .nav-links {
+            flex: 1;
+            text-align: right;
+        }
+
+        .nav-links ul {
+            list-style: none;
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        .nav-links ul li {
+            margin: 0 15px;
+        }
+
+        .nav-links ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            transition: 0.3s ease-in-out;
+        }
+
+        .nav-links ul li a:hover {
+            color: #ffd700;
+        }
+
+        .icon {
+            font-size: 30px;
+            color: white;
+            cursor: pointer;
+            display: none;
+        }
+
+        .text-box {
+            padding: 40px 20px 0;
+        }
+
+        .text-box h1 {
+            font-size: 40px;
+            margin-bottom: 10px;
+        }
+
+        .text-box p {
+            font-size: 16px;
+        }
+
+        .course-section {
+            padding: 60px 20px;
+            text-align: center;
+            background: #fff;
+        }
+
+        .course-section h1 {
+            font-size: 30px;
+            margin-bottom: 40px;
+            color: #2c3e50;
+        }
+
+        .course-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+        }
+
+        .course-card {
+            background: #f1f1f1;
+            border-radius: 10px;
+            padding: 25px;
+            max-width: 300px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .course-card h2 {
+            font-size: 22px;
+            margin-bottom: 15px;
+            color: #203a43;
+        }
+
+        .course-card p {
+            font-size: 15px;
+            color: #444;
+        }
+
+        .footer {
+            background: #111;
+            color: white;
+            text-align: center;
+            padding: 40px 20px;
+        }
+
+        .footer h4 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        .footer p {
+            font-size: 14px;
+            color: #aaa;
+            margin-top: 10px;
+        }
+
+        @media(max-width: 768px) {
+            .nav-links ul {
+                flex-direction: column;
+                background: #203a43;
+                position: absolute;
+                top: 70px;
+                right: 0;
+                width: 100%;
+                display: none;
+            }
+
+            .icon {
+                display: block;
+            }
+
+            .text-box h1 {
+                font-size: 30px;
+            }
+
+            .course-container {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header and Menu Bar -->
+    <section class="header">
+        <nav>
+            <a href="index.html"><img src="image/100.jpg" id="logo-img" alt="University Logo"></a>
+            <div class="nav-links" id="navLinks">
+                <span class="icon" onclick="hidemenu()">&#10005;</span>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="Admission_page.html">Admission</a></li>
+                    <li><a href="course.html">Course</a></li>
+                    <li><a href="fee.html">Fees</a></li>
+                    <li><a href="Contact_page.html">Contact</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                </ul>
+            </div>
+            <span class="icon" onclick="showmenu()">&#9776;</span>
+        </nav>
+
+        <div class="text-box">
+            <h1>Our Courses</h1>
+            <p>Explore top programs offered by MATS University</p>
+        </div>
+    </section>
+
+    <!-- Course Section -->
+    <section class="course-section">
+        <h1>Computer Science Programs</h1>
+        <div class="course-container">
+            <div class="course-card">
+                <h2>BCA</h2>
+                <p>3-year undergraduate program focused on computer fundamentals, software development, and programming skills for IT careers.</p>
+            </div>
+            <div class="course-card">
+                <h2>MCA</h2>
+                <p>2-year postgraduate program providing advanced knowledge in system management, database administration, and application development.</p>
+            </div>
+            <div class="course-card">
+                <h2>BTech Computer Science</h2>
+                <p>4-year engineering course focusing on theoretical and practical aspects of computing, algorithms, and modern software systems.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <section class="footer">
+        <h4>About Us</h4>
+        <p>The Gokul Global University at Sidhpur provides premier technical programs that set high academic standards.</p>
+        <p id="copyright">Made With &#10084; Jaydipsinh Solanki</p>
+    </section>
+
+    <!-- JS for Menu Toggle -->
+    <script>
+        function showmenu() {
+            document.querySelector(".nav-links ul").style.display = "flex";
+        }
+        function hidemenu() {
+            document.querySelector(".nav-links ul").style.display = "none";
+        }
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>University Gallery</title>
+  <link rel="shortcut icon" href="image/favicon.ico" type="image/svg+xml" />
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: sans-serif;
+    }
+
+    body {
+      background: #f9f9f9;
+    }
+
+    /* Header + Navbar (same as index.html) */
+    .header {
+      background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 40px;
+    }
+
+    nav img {
+      height: 60px;
+    }
+
+    .nav-links {
+      flex: 1;
+      text-align: right;
+    }
+
+    .nav-links ul {
+      list-style: none;
+      display: flex;
+      justify-content: flex-end;
+    }
+
+    .nav-links ul li {
+      margin: 0 15px;
+    }
+
+    .nav-links ul li a {
+      color: white;
+      text-decoration: none;
+      font-weight: 600;
+      transition: 0.3s ease-in-out;
+    }
+
+    .nav-links ul li a:hover {
+      color: #ffd700;
+    }
+
+    .icon {
+      font-size: 30px;
+      color: white;
+      cursor: pointer;
+      display: none;
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      padding: 40px 20px;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .gallery-grid img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      border-radius: 12px;
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease;
+    }
+
+    .gallery-grid img:hover {
+      transform: scale(1.05);
+    }
+
+    @media (max-width: 768px) {
+      .nav-links ul {
+        flex-direction: column;
+        background: #203a43;
+        position: absolute;
+        top: 70px;
+        right: 0;
+        width: 100%;
+        display: none;
+      }
+
+      .icon {
+        display: block;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header and Menu Bar -->
+  <section class="header">
+    <nav>
+      <a href="index.html"><img src="image/100.jpg" alt="University Logo" /></a>
+      <div class="nav-links" id="navLinks">
+        <span class="icon" onclick="hidemenu()">&#10005;</span>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+                    <li><a href="Admission_page.html">Admission</a></li>
+                    <li><a href="course.html">Course</a></li>
+                    <li><a href="fee.html">Fees</a></li>
+                    <li><a href="Contact_page.html">Contact</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+        </ul>
+      </div>
+      <span class="icon" onclick="showmenu()">&#9776;</span>
+    </nav>
+  </section>
+
+  <!-- Gallery Grid -->
+  <div class="gallery-grid">
+    <img src="image/one.jpeg" alt="Campus 1" />
+    <img src="image/two.jpeg" alt="Campus 2" />
+    <img src="image/three.jpeg" alt="Campus 3" />
+    <img src="image/four.jpeg" alt="Campus 4" />
+    <img src="image/five.jpeg" alt="Campus 5" />
+    <img src="image/six.jpeg" alt="Campus 6" />
+    <img src="image/seven.jpeg" alt="Campus 7" />
+    <img src="image/eighgt.jpeg" alt="Campus 8" />
+    <img src="image/nine.jpeg" alt="Campus 9" />
+    <img src="image/ten.jpeg" alt="Campus 10" />
+  </div>
+
+  <!-- JS Menu Toggle -->
+  <script>
+    function showmenu() {
+      document.querySelector(".nav-links ul").style.display = "flex";
+    }
+    function hidemenu() {
+      document.querySelector(".nav-links ul").style.display = "none";
+    }
+  </script>
+
+</body>
+</html>
